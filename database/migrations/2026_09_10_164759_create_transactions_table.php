@@ -13,15 +13,12 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->foreign("clint_id")->construct("clints")->onDelete();
-            $table->foreign("webhook_id")->constract("webhooks")->onDelete();
+            $table->foreignId("clint_id")->constract("clints")->onDelete();
+            $table->foreignId("webhook_id")->constract("webhooks")->onDelete();
             $table->string("reference")->nullable();
-            $table->string("reference")->nullable();
-            $table->initeger("amount")->nullable();
+            $table->integer("amount")->nullable();
             $table->string("transaction_date")->nullable();
             $table->string("metadata")->nullable();
-
-            $table->
             $table->timestamps();
         });
     }

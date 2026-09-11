@@ -1,0 +1,14 @@
+internal reference
+internal
+reference
+
+incoming
+webhooks
+
+payload
+processed_at
+
+amount
+transactions
+clints
+belongsTo

@@ -3,8 +3,21 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Transactions;
 
-class webhooks extends Model
-{
-    //
+class Webhooks extends Model {
+    protected $fillable = [
+        "clint_id",
+        "bank",
+        "payload",
+        "status",
+        "error_message",
+        "processed_at",
+    ];
+
+
+    public function transactions() {
+        return $this->hasMany(Transactions::class);
+    }
+
 }
