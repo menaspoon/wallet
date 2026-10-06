@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('webhooks', function (Blueprint $table) {
             $table->id();
-            $table->foreign("clint_id")->construct("clints")->onDelete();
+            $table->foreignId("clint_id")->constrained("clints")->cascadeOnDelete();
             $table->string("bank")->nullable();
             $table->string("payload")->nullable();
             $table->string("status")->nullable();

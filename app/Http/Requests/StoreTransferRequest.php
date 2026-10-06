@@ -13,7 +13,7 @@ class StoreTransferRequest extends FormRequest {
 
     public function rules(): array {
         return [
-            "clint_id"      =>   "required",
+            "sender_id"     => "required",
             "amount"        =>  "required",
             "bank"          =>  "required",
         ];

@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("clint_id")->constract("clints")->onDelete();
-            $table->foreignId("webhook_id")->constract("webhooks")->onDelete();
+            $table->foreignId("clint_id")->constrained("clints")->cascadeOnDelete();
+            $table->foreignId("webhook_id")->constrained("webhooks")->cascadeOnDelete();
             $table->string("reference")->nullable();
             $table->integer("amount")->nullable();
             $table->string("transaction_date")->nullable();
